@@ -18,16 +18,19 @@ app.use(express.urlencoded({extended: false}));
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(helmet());
 
-// var corsOptions = {
-//     origin: true, // 허용되는 Origin
-//     methods: ["GET", "POST", "OPTIONS", "PUT", "DELETE"],
-//     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-// }
+const corsOptions = {
+    origin: '*',
+    credentials: true,
+    methods: ["GET", "POST", "OPTIONS", "PUT", "DELETE"],
+    // allowedHeaders: ['Content-Type', 'Authorization']
+};
 
-app.use("/image", cors(), introduceRouter);
+app.use(cors(corsOptions));
+
+app.use("/image",  introduceRouter);
 // app.use(`http://${process.env.BASE_URL}/image`, introduceRouter);
-app.use("/banner", cors(), bannerRouter);
-app.use("/profile", cors(), profileRouter);
+app.use("/banner",  bannerRouter);
+app.use("/profile",  profileRouter);
 
 app.listen(app.get('port'),()=>{
     console.log("http://localhost:" + app.get('port'));
