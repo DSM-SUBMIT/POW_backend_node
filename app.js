@@ -27,8 +27,9 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.use((req, res)=>{
-    console.log(req.headers);
+app.use((req, res, next)=>{
+    console.log("req.headers:\n"+req.headers);
+    next();
 })
 
 app.use("/image",  introduceRouter);
