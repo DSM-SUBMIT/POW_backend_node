@@ -12,21 +12,21 @@ const connection = require("../mysql");
 //     });
 // }
 
-async function getImage(filename){
-    let imagePath = "";
+// async function getImage(filename){
+//     let imagePath = "";
 
-    await new Promise( async (resolve, reject)=>{
-        connection.query(`SELECT * FROM pow.tbl_club WHERE banner_path = "${filename}"`, (error, imageName)=>{
-            if(error){
-                console.error(error);
-            }
-            imagePath = "../public/banners/"+imageName[0].path;
-            resolve(imagePath);
-        });
-    })
+//     await new Promise( async (resolve, reject)=>{
+//         connection.query(`SELECT * FROM pow.tbl_club WHERE banner_path = "${filename}"`, (error, imageName)=>{
+//             if(error){
+//                 console.error(error);
+//             }
+//             imagePath = "../public/banners/"+imageName[0].path;
+//             resolve(imagePath);
+//         });
+//     })
 
-    return imagePath;
-}
+//     return imagePath;
+// }
 
 function deleteImage(id){
     try{

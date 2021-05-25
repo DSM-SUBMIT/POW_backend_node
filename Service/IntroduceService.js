@@ -2,21 +2,21 @@ const path = require('path');
 const fs = require("fs");
 const connection = require("../mysql");
 
-async function getImage(filename){
-    let imagePath = "";
+// async function getImage(filename){
+//     let imagePath = "";
 
-    await new Promise( async (resolve, reject)=>{
-        connection.query(`SELECT * FROM pow.tbl_project_introduction_image WHERE path = "${filename}"`, (error, imageName)=>{
-            if(error){
-                console.error(error);
-            }
-            imagePath = "../public/images/"+imageName[0].path;
-            resolve(imagePath);
-        });
-    })
+//     await new Promise( async (resolve, reject)=>{
+//         connection.query(`SELECT * FROM pow.tbl_project_introduction_image WHERE path = "${filename}"`, (error, imageName)=>{
+//             if(error){
+//                 console.error(error);
+//             }
+//             imagePath = "../public/images/"+imageName[0].path;
+//             resolve(imagePath);
+//         });
+//     })
 
-    return imagePath;
-}
+//     return imagePath;
+// }
 
 function setImage(filename, id){
     connection.query(`INSERT INTO pow.tbl_project_introduction_image(path,project_introduction_id) VALUES("${filename}",${id})`, function (error, results, fields) {

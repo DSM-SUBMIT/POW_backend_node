@@ -14,21 +14,21 @@ const connection = require("../mysql");
 // }
 
 //이미지
-async function getImage(filename){
-    let imagePath = "";
+// async function getImage(filename){
+//     let imagePath = "";
 
-    await new Promise( async (resolve, reject)=>{
-        connection.query(`SELECT * FROM pow.tbl_club WHERE profile_path = "${filename}"`, (error, imageName)=>{
-            if(error){
-                console.error(error);
-            }
-            imagePath = "../public/profiles/"+imageName[0].path;
-            resolve(imagePath);
-        });
-    })
+//     await new Promise( async (resolve, reject)=>{
+//         connection.query(`SELECT * FROM pow.tbl_club WHERE profile_path = "${filename}"`, (error, imageName)=>{
+//             if(error){
+//                 console.error(error);
+//             }
+//             imagePath = "../public/profiles/"+imageName[0].path;
+//             resolve(imagePath);
+//         });
+//     })
 
-    return imagePath;
-}
+//     return imagePath;
+// }
 
 //이미지 삭제
 function deleteImage(id,){
