@@ -25,10 +25,10 @@ const router = express.Router();
 
 router.use(methodOverride("_method"));
 
-router.get("/:filename", async (req, res)=>{
-    const file = await getFile(req, res);
-    res.sendFile(path.join(__dirname, file));
-});
+// router.get("/:filename", async (req, res)=>{
+//     const file = await getFile(req, res);
+//     res.sendFile(path.join(__dirname, file));
+// });
 
 // router.get("/:filename", async (req, res)=>{
 //     console.log(req.params.filename);
