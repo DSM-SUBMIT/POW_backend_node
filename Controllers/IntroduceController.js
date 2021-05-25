@@ -1,18 +1,18 @@
 const jwt = require('jsonwebtoken');
-const getImage = require("../Service/IntroduceService").getImage;
+// const getImage = require("../Service/IntroduceService").getImage;
 const setImage = require("../Service/IntroduceService").setImage;
 const updateImage = require("../Service/IntroduceService").updateImage;
 const deleteImage = require("../Service/IntroduceService").deleteImage;
 const deleteSql = require("../Service/IntroduceService").deleteSql;
 
-async function getFile(req, res){
-    console.log(req.params.filename);
-    return new Promise((resolve, reject)=>{
-        getImage(req.params.filename).then((path)=>{
-            resolve(path);
-        });
-    });
-}
+// async function getFile(req, res){
+//     console.log(req.params.filename);
+//     return new Promise((resolve, reject)=>{
+//         getImage(req.params.filename).then((path)=>{
+//             resolve(path);
+//         });
+//     });
+// }
 
 function setFile(req, res, next){
     try{
@@ -81,7 +81,7 @@ function deleteFile(req, res, next){
 }
 
 module.exports = {
-    getFile: getFile,
+    // getFile: getFile,
     setFile: setFile,
     updateFile: updateFile,
     deleteFile: deleteFile,

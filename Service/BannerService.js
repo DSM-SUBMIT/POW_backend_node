@@ -68,7 +68,7 @@ function resetImage(id){
 }
 
 module.exports = {
-    getImage: getImage,
+    // getImage: getImage,
     deleteImage: deleteImage,
     updateImage: updateImage,
     resetImage: resetImage

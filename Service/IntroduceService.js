@@ -63,7 +63,7 @@ function deleteSql(id){
 }
 
 module.exports = {
-    getImage: getImage,
+    // getImage: getImage,
     setImage: setImage,
     updateImage: updateImage,
     deleteImage: deleteImage,

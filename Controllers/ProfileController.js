@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const getImage = require("../Service/ProfileController").getImage;
+// const getImage = require("../Service/ProfileController").getImage;
 const deleteImage = require("../Service/ProfileController").deleteImage;
 const updateImage = require("../Service/ProfileController").updateImage;
 const resetImage = require("../Service/ProfileController").resetImage;
@@ -10,14 +10,14 @@ const resetImage = require("../Service/ProfileController").resetImage;
 //     return getImage(req.params.filename);
 // }
 
-async function getFile(req, res){
-    console.log(req.params.filename);
-    return new Promise((resolve, reject)=>{
-        getImage(req.params.filename).then((path)=>{
-            resolve(path);
-        });
-    });
-}
+// async function getFile(req, res){
+//     console.log(req.params.filename);
+//     return new Promise((resolve, reject)=>{
+//         getImage(req.params.filename).then((path)=>{
+//             resolve(path);
+//         });
+//     });
+// }
 
 function updateFile(req, res, next){
     try{
@@ -66,7 +66,7 @@ function resetFile(req, res, next){
 }
 
 module.exports = {
-    getFile: getFile,
+    // getFile: getFile,
     updateFile: updateFile,
     resetFile: resetFile
 }
