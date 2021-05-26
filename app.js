@@ -28,7 +28,8 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.use((req, res, next)=>{
-    console.log("req.headers:\n"+req.headers);
+    console.log("req.headers:");
+    console.log(req.headers);
     next();
 })
 
