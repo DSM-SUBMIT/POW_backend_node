@@ -32,6 +32,9 @@ function updateFile(req, res, next){
             updateImage(req.file.filename, req.params.id);
             return "file updated";
         }
+        else if(clubID == undefined){
+            return "Please use after login";
+        }
         else{
             return "Please use after login";
         }
@@ -51,6 +54,9 @@ function resetFile(req, res, next){
         if(clubID){
             resetImage(req.params.id);
             return "file reset";
+        }
+        else if(clubID == undefined){
+            return "Please use after login";
         }
         else{
             return "Please use after login";

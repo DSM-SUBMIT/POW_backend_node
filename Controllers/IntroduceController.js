@@ -30,6 +30,9 @@ function setFile(req, res, next){
             }
             return "files saved";
         }
+        else if(clubID == undefined){
+            return "Please use after login";
+        }
         else{
             return "Please use after login";
         }
@@ -48,6 +51,9 @@ function updateFile(req, res, next){
             console.log(req.params.id);
             updateImage(req.file.filename, req.params.id);
             return "file updated";
+        }
+        else if(clubID == undefined){
+            return "Please use after login";
         }
         else{
             return "Please use after login";
@@ -69,6 +75,9 @@ function deleteFile(req, res, next){
             deleteSql(req.params.id);
             console.log("return file deleted")
             return "file deleted";
+        }
+        else if(clubID == undefined){
+            return "Please use after login";
         }
         else{
             console.log("return Please use after login");
