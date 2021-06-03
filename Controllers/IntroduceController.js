@@ -24,9 +24,10 @@ function setFile(req, res, next){
         const clubID = jwt.verify(req.headers.authorization.substring(7,),process.env.SECRET_KEY);
 
         if(clubID){
-            for(i = 0; i<req.files.length; i++){
-                console.log("filename "+req.files[i].filename);
-                setImage(req.files[i].filename, req.params.id);
+            for(let file of req.files){
+                console.log(file)
+                console.log("filename "+file.filename);
+                setImage(file.filename, req.params.id);
             }
             return "files saved";
         }

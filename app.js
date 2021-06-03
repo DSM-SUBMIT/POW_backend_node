@@ -27,12 +27,6 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.use((req, res, next)=>{
-    console.log("req.headers:");
-    console.log(req.headers);
-    next();
-})
-
 app.use("/image",  introduceRouter);
 // app.use(`http://${process.env.BASE_URL}/image`, introduceRouter);
 app.use("/banner",  bannerRouter);
