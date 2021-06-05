@@ -5,22 +5,9 @@ const updateImage = require("../Service/IntroduceService").updateImage;
 const deleteImage = require("../Service/IntroduceService").deleteImage;
 const deleteSql = require("../Service/IntroduceService").deleteSql;
 
-// async function getFile(req, res){
-//     console.log(req.params.filename);
-//     return new Promise((resolve, reject)=>{
-//         getImage(req.params.filename).then((path)=>{
-//             resolve(path);
-//         });
-//     });
-// }
 
 function setFile(req, res, next){
     try{
-        // console.log(req.headers.authorization);
-        // console.log("\n")
-        // console.log(req.headers.authorization.substring(7,))
-        // console.log(jwt.verify(req.headers.authorization.substring(7,),process.env.SECRET_KEY))
-
         const clubID = jwt.verify(req.headers.authorization.substring(7,),process.env.SECRET_KEY);
 
         if(clubID){

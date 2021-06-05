@@ -4,21 +4,6 @@ const deleteImage = require("../Service/BannerService").deleteImage;
 const updateImage = require("../Service/BannerService").updateImage;
 const resetImage = require("../Service/BannerService").resetImage;
 
-// function getFile(req, res){
-//     console.log(req.params.filename);
-//     //getImage
-//     return getImage(req.params.filename);
-// }
-
-// async function getFile(req, res){
-//     console.log(req.params.filename);
-//     return new Promise((resolve, reject)=>{
-//         getImage(req.params.filename).then((path)=>{
-//             resolve(path);
-//         });
-//     });
-// }
-
 function updateFile(req, res, next){
     try{
 

@@ -35,6 +35,3 @@ app.use("/profile",  profileRouter);
 app.listen(app.get('port'),()=>{
     console.log("http://localhost:" + app.get('port'));
 });
-
-//profile, banner delete 삭제하면 다 날라감?
-//profile, banner update 뭐가 문제였는데 기억 안남
