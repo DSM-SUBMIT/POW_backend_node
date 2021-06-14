@@ -12,7 +12,7 @@ const cors = require('cors');
 const corsOptions = {
     origin: '*',
     credentials: true,
-    methods: ["GET", "POST", "OPTIONS", "PUT", "DELETE"],
+    methods: ["GET", "POST", "OPTIONS", "PUT", "DELETE", "PATCH"],
     // allowedHeaders: ['Content-Type', 'Authorization']
 };
 
@@ -28,7 +28,6 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(helmet());
 
 app.use("/image",  introduceRouter);
-// app.use(`http://${process.env.BASE_URL}/image`, introduceRouter);
 app.use("/banner",  bannerRouter);
 app.use("/profile",  profileRouter);
 
