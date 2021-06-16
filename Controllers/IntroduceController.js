@@ -26,7 +26,7 @@ function setFile(req, res, next){
         }
     }catch(error){
         console.error(error);
-        return next(error)
+        return error;
     }
 }
 
@@ -48,7 +48,7 @@ function updateFile(req, res, next){
         }
     }catch(error){
         console.error(error);
-        return next(error);
+        return error;
     }
 }
 
@@ -73,7 +73,7 @@ function deleteFile(req, res, next){
         }
     }catch(error){
         console.error(error);
-        return next(error);
+        return error;
     }
 }
 

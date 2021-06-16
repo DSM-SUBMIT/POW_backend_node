@@ -20,6 +20,10 @@ router.use(methodOverride("_method"));
 
 router.put("/:id", uploadWithOriginFN.single('file'), (req, res, next)=>{
     const response = updateFile(req, res, next);
+    if(typeof response == Error){
+        res.statusCode(500).json(response);
+        return
+    }
     res.json(response);
 });
 

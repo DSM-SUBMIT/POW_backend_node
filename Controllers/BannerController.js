@@ -10,7 +10,7 @@ function updateFile(req, res, next){
         console.log(req.headers.authorization);
         console.log(typeof req.headers.authorization);
 
-        const clubID = jwt.verify(req.headers.authorization.substring(7,),process.env.SECRET_KEY);
+        const clubID = jwt.verify(req.headers.authorization.split(" ")[1], process.env.SECRET_KEY);
     
         //deleteImage
         deleteImage(req.params.id);
@@ -35,7 +35,7 @@ function updateFile(req, res, next){
 
 function resetFile(req, res, next){
     try{
-        const clubID = jwt.verify(req.headers.authorization.substring(7,),process.env.SECRET_KEY);
+        const clubID = jwt.verify(req.headers.authorization.split(" ")[1], process.env.SECRET_KEY);
 
         //deleteImage
         deleteImage(req.params.id);
