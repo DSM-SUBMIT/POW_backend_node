@@ -1,6 +1,5 @@
 const jwt = require('jsonwebtoken');
-// const getImage = require("../Service/BannerService").getImage;
-const deleteImage = require("../Service/BannerService").deleteImage;
+// const deleteImage = require("../Service/BannerService").deleteImage;
 const updateImage = require("../Service/BannerService").updateImage;
 const resetImage = require("../Service/BannerService").resetImage;
 
@@ -13,12 +12,12 @@ function updateFile(req, res, next){
         const clubID = jwt.verify(req.headers.authorization.split(" ")[1], process.env.SECRET_KEY);
     
         //deleteImage
-        deleteImage(req.params.id);
+        // deleteImage(req.params.id);
 
         if(clubID){
             console.log(req.params.id);
             //updateImage
-            updateImage(req.file.filename, req.params.id);
+            updateImage(req.file.location, req.params.id);
             return "file updated";
         }
         else if(clubID == undefined){
@@ -38,7 +37,7 @@ function resetFile(req, res, next){
         const clubID = jwt.verify(req.headers.authorization.split(" ")[1], process.env.SECRET_KEY);
 
         //deleteImage
-        deleteImage(req.params.id);
+        // deleteImage(req.params.id);
 
         if(clubID){
             resetImage(req.params.id);
@@ -57,7 +56,6 @@ function resetFile(req, res, next){
 }
 
 module.exports = {
-    // getFile: getFile,
     updateFile: updateFile,
     resetFile: resetFile
 }

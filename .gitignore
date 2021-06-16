@@ -1,9 +1,17 @@
 .env
 jwt.js
 node_modules
+
 backupBanner.js
 backupBannerController.js
+backupBannerService.js
+
 backupIntroduce.js
 backupIntroduceController.js
+backupIntroduceService.js
+
 backupProfile.js
 backupProfileController.js
+backupProfileService.js
+
+s3.json
