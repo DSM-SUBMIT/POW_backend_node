@@ -29,7 +29,7 @@ function updateFile(req, res, next){
         }
     }catch(error){
         console.error(error);
-        return next(error)
+        return error;
     }
 }
 
@@ -52,7 +52,7 @@ function resetFile(req, res, next){
         }
     }catch(error){
         console.error(error);
-        return next(error);
+        return error;
     }
 }
 
