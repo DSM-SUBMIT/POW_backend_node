@@ -1,12 +1,11 @@
 const multer = require('multer');
 const multerS3 = require('multer-s3');
 const aws = require('aws-sdk');
-aws.config.loadFromPath(__dirname + '/s3.json');
 
 const s3 = new aws.S3({
-    accessKeyId: process.env.AccessKeyId, //노출주의
-    secretAccessKey: process.env.SecretAccessKey, //노출주의
-    region: process.env.REGION, //노출주의
+    accessKeyId: process.env.AccessKeyId,
+    secretAccessKey: process.env.SecretAccessKey,
+    region: process.env.REGION,
 });
 const upload = multer({
     storage: multerS3({
