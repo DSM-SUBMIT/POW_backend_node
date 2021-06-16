@@ -2,8 +2,8 @@ const path = require('path');
 const fs = require("fs");
 const connection = require("../mysql");
 
-function setImage(filename, id){
-    connection.query(`INSERT INTO pow.tbl_project_introduction_image(path,project_introduction_id) VALUES("${filename}",${id})`, function (error, results, fields) {
+function setImage(imageLocation, id){
+    connection.query(`INSERT INTO pow.tbl_project_introduction_image(path,project_introduction_id) VALUES("${imageLocation}",${id})`, function (error, results, fields) {
         if (error){
             console.error(error);
         }
@@ -11,8 +11,8 @@ function setImage(filename, id){
     });
 }
 
-function updateImage(filename, id){
-    connection.query(`UPDATE pow.tbl_project_introduction_image SET PATH = "${filename}" where id = ${id}`, function (error, results, fields) {
+function updateImage(imageLocation, id){
+    connection.query(`UPDATE pow.tbl_project_introduction_image SET PATH = "${imageLocation}" where id = ${id}`, function (error, results, fields) {
         if (error){
             console.error(error);
         }

@@ -13,5 +13,3 @@ backupIntroduceService.js
 backupProfile.js
 backupProfileController.js
 backupProfileService.js
-
-s3.json

@@ -1,5 +1,5 @@
+const path = require('path');
 const fs = require("fs");
-const path = require("path");
 const connection = require("../mysql");
 
 //이미지 삭제
@@ -22,8 +22,8 @@ const connection = require("../mysql");
 // }
 
 //이미지 업데이트
-function updateImage(filename, id){
-    connection.query(`UPDATE pow.tbl_club SET profile_path = "${filename}" where id = ${id}`, function (error, results, fields) {
+function updateImage(imageLocation, id){
+    connection.query(`UPDATE pow.tbl_club SET profile_path = "${imageLocation}" where id = ${id}`, function (error, results, fields) {
         if (error){
             console.error(error);
         }
