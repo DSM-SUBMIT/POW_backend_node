@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const setImage = require("../Service/IntroduceService").setImage;
-// const updateImage = require("../Service/IntroduceService").updateImage;
-const deleteImage = require("../Service/IntroduceService").deleteImage;
+const updateImage = require("../Service/IntroduceService").updateImage;
+// const deleteImage = require("../Service/IntroduceService").deleteImage;
 const deleteSql = require("../Service/IntroduceService").deleteSql;
 
 
