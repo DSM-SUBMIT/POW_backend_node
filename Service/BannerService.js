@@ -34,7 +34,7 @@ function updateImage(imageLocation, id){
 }
 
 function resetImage(id){
-    connection.query(`UPDATE pow.tbl_club SET banner_path = "DefaultImage.png" WHERE id = ${id}`, function (error, results, fields) {
+    connection.query(`UPDATE pow.tbl_club SET banner_path = NULL WHERE id = ${id}`, function (error, results, fields) {
         if (error){
             console.error(error);
         }

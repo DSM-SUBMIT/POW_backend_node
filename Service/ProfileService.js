@@ -33,7 +33,7 @@ function updateImage(imageLocation, id){
 
 //이미지 초기화
 function resetImage(id){
-    connection.query(`UPDATE pow.tbl_club SET profile_path = "DefaultImage.png" WHERE id = ${id}`, function (error, results, fields) {
+    connection.query(`UPDATE pow.tbl_club SET profile_path = NULL WHERE id = ${id}`, function (error, results, fields) {
         if (error){
             console.error(error);
         }
